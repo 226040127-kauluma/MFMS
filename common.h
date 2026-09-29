@@ -1,1 +1,0 @@
-//TODO: Define common structures and functions
