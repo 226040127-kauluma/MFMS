@@ -1,4 +1,1 @@
-#ifndef REPORTS_H
-#define REPORTS_H
-void displayAllReports();
-#endif
+TODO: Define report-related structures and functions
