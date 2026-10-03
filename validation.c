@@ -6,7 +6,6 @@
 
 #define LINE_SIZE 256
 
-/* Reads one line from the keyboard. Returns 1 on success, 0 if input ended. */
 static int readLine(char *line, int size)
 {
     if (fgets(line, size, stdin) == NULL) {
@@ -102,7 +101,6 @@ void readString(char *buffer, int size)
     }
 }
 
-/* ---- Group-agreed names, built on the functions above ---- */
 
 int getValidInt(void)
 {
@@ -124,10 +122,10 @@ int getMenuChoice(int min, int max)
 
 double getValidDouble(void)
 {
-    return (double)readFloat();   /* readFloat already rejects negatives */
+    return (double)readFloat();   
 }
 
 void getValidString(char *buffer, int size)
 {
-    readString(buffer, size);     /* readString already rejects empty input */
+    readString(buffer, size);     
 }
