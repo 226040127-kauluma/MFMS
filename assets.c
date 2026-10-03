@@ -24,7 +24,6 @@ static void readNonEmptyString(const char *prompt, char *dest, int size) {
     }
 }
 
-
 static double readNonNegativeDouble(const char *prompt) {
     double value;
     char   line[64];
@@ -121,20 +120,15 @@ void addAsset(Asset assets[], int *count) {
         }
     }
 
-    /* --- Name --- */
     readNonEmptyString("Enter Asset Name: ", a.name, MAX_AST_NAME);
 
-    /* --- Type --- */
     readNonEmptyString("Enter Asset Type (Vehicle/Computer/Building/Equipment/Furniture): ",
                        a.type, MAX_AST_TYPE);
 
-    /* --- Purchase Value: non-negative --- */
     a.purchaseValue = readNonNegativeDouble("Enter Purchase Value (N$): ");
 
-    /* --- Department --- */
     readNonEmptyString("Enter Department: ", a.department, MAX_AST_DEPT);
 
-    /* --- Condition: must be one of 4 allowed --- */
     readCondition("Enter Condition (Excellent/Good/Fair/Poor): ",
                   a.condition, MAX_CONDITION);
 
@@ -161,7 +155,6 @@ void searchAssetMenu(Asset assets[], int count) {
         displayAsset(assets[idx]);
     }
 }
-
 
 double getTotalAssetValue(Asset assets[], int count) {
     double total = 0;
