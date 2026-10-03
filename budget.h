@@ -1,8 +1,25 @@
 #ifndef BUDGET_H
 #define BUDGET_H
-#define MAX_BUDGETS 50
-struct Budget { char department[50]; float allocated, expenditure, remaining; char status[20]; };
-extern struct Budget budgets[MAX_BUDGETS];
-extern int budgetCount;
-void addBudget(); void displayBudgets(); void checkOverBudget(); void displayBudgetMenu();
-#endif
+
+#define MAX_DEPARTMENTS   20
+#define MAX_DEPT_NAME     50
+
+void budgetMenu(void);
+
+void enterDepartmentBudget(void);
+void enterExpenditure(void);
+void displayBudgetInfo(void);
+void searchDepartmentBudget(void);
+void displayExceededDepartments(void);
+
+double calculateRemainingBudget(double allocated, double expenditure);
+int    isWithinBudget(double allocated, double expenditure);
+
+int    getDepartmentCount(void);
+double getTotalAllocated(void);
+double getTotalExpenditure(void);
+double getTotalRemaining(void);
+int    countExceededDepartments(void);
+void   displayBudgetReport(void);
+
+#endif /* BUDGET_H */
