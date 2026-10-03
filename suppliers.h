@@ -1,1 +1,0 @@
-//TODO: Define supplier-related structures and functions
