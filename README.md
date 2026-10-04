@@ -18,7 +18,7 @@ GitHub Username
 2
 [Kauluma Natangwe]
 [226040127]
-[@226040127]
+[@226040127-kauluma]
 
 3
 [Eichas L Sylvia]
