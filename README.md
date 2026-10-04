@@ -23,7 +23,7 @@ GitHub Username
 3
 [Eichas L Sylvia]
 [226171752]
-[@Slyia-226171752]
+[@Sylvia-226171752]
 
 4
 [Rauna Shindumbu]
