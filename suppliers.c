@@ -104,9 +104,9 @@ void searchSupplier(const Supplier suppliers[], int count) {
     if (choice == 1) {
         int searchID;
         printf("Enter Supplier ID to search: ");
-        scanf("%d", &searchID);
-        while (getchar() != '\n');
-
+while (scanf("%d", &searchID) != 1) {
+    printf("Invalid ID. Enter a number: ");
+    while (getchar() != '\n');
         for (int i = 0; i < count; i++) {
             if (suppliers[i].supplierID == searchID) {
                 printf("\n[Found] ID: %d | Name: %s | Email: %s | Phone: %s | Town: %s\n",
