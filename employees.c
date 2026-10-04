@@ -20,6 +20,69 @@ float housingAllowance[100];
 float transportAllowance[100];
 float otherAllowance[100];
 
+// Employee Management Menu //
+
+int employeeMenu(int count)
+{
+    int choice;
+    int id;
+    int position;
+
+    {
+        printf("\n====================================\n");
+        printf("       EMPLOYEE MANAGEMENT\n");
+        printf("====================================\n");
+        printf("1. Add Employee\n");
+        printf("2. Display Employees\n");
+        printf("3. Search Employee\n");
+        printf("4. Exit Employee Management\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            count = addEmployee(count);
+        }
+
+        else if (choice == 2)
+        {
+            displayEmployees(count);
+        }
+
+        else if (choice == 3)
+        {
+            printf("\n========== SEARCH EMPLOYEE ==========\n");
+
+            printf("Enter Employee ID: ");
+            scanf("%d", &id);
+
+            position = searchEmployee(id, employeeID, count);
+
+            if (position == -1)
+            {
+                printf("\nEmployee with ID %d was not found.\n", id);
+            }
+            else
+            {
+                printf("\nEmployee Found!\n");
+                displayEmployee(position);
+            }
+        }
+
+        else if (choice == 4)
+        {
+            printf("\nLeaving Employee Management...\n");
+        }
+
+        else
+        {
+            printf("\nInvalid choice. Please try again.\n");
+        }
+
+    } while (choice != 4);
+
+    return count;
+}
 
 // Add an employee //
 
