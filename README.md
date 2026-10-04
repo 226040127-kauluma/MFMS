@@ -76,24 +76,24 @@ Asset report
 Data Validation
 
 Rejects negative salaries/budgets, empty names, invalid numbers and invalid menu choices.
+
 Project Structure
 MFMS/
 
-├── main.c
+main.c
 
-├── employees.c / employees.h
+employees.c / employees.h
 
-├── budget.c    / budget.h
+budget.c    / budget.h
 
-├── suppliers.c / suppliers.h
+suppliers.c / suppliers.h
 
-├── assets.c    / assets.h
+assets.c    / assets.h
 
-├── reports.c   / reports.h
+reports.c   / reports.h
 
-├── README.md
+README.md
 
-└── TEST_PLAN.md
 Compilation Instructions
 
 Requires GCC.
@@ -134,13 +134,11 @@ Student 6 – [Josephine Teodol]
 Functions, integration and validation
 main.c, validation helpers
 Student 7 – [Vannesa Tapalo]
-Testing, documentation and Git coordination
-TEST_PLAN.md, README.md
+Testing, documentation and Git coordination,
+README.md
 
-Testing
-See TEST_PLAN.md for test cases and results.
 
-Known Limitations
+
 
 
 
