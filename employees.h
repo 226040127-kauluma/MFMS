@@ -17,7 +17,7 @@ extern float workingHours[100];
 extern float basicSalary[100];
 extern float housingAllowance[100];
 extern float transportAllowance[100];
-extern float otherAllowance;
+extern float otherAllowance[100];
 
 
 // Function declarations //
