@@ -10,8 +10,6 @@ static void trimNewline(char *str) {
         str[len - 1] = '\0';
     }
 }
-
-// 1. ADD SUPPLIER
 void addSupplier(Supplier suppliers[], int *count) {
     if (*count >= MAX_SUPPLIERS) {
         printf("\n[Error] Supplier database is full!\n");
@@ -21,13 +19,12 @@ void addSupplier(Supplier suppliers[], int *count) {
     Supplier newSupplier;
     printf("\n=== ADD NEW SUPPLIER ===\n");
 
-    // Input & Validate ID
     printf("Enter Supplier ID (positive integer): ");
     while (scanf("%d", &newSupplier.supplierID) != 1 || newSupplier.supplierID <= 0) {
         printf("Invalid ID. Enter a positive number: ");
-        while (getchar() != '\n'); // clear buffer
+        while (getchar() != '\n'); 
     }
-    while (getchar() != '\n'); // clear newline
+    while (getchar() != '\n'); 
 
     // Check for duplicate ID
     for (int i = 0; i < *count; i++) {
@@ -37,7 +34,6 @@ void addSupplier(Supplier suppliers[], int *count) {
         }
     }
 
-    // Input Name
     do {
         printf("Enter Supplier Name: ");
         fgets(newSupplier.name, STRING_LEN, stdin);
@@ -47,29 +43,23 @@ void addSupplier(Supplier suppliers[], int *count) {
         }
     } while (strlen(newSupplier.name) == 0);
 
-    // Input Email
     printf("Enter Email: ");
     fgets(newSupplier.email, STRING_LEN, stdin);
     trimNewline(newSupplier.email);
 
-    // Input Telephone
     printf("Enter Phone Number: ");
     fgets(newSupplier.phone, STRING_LEN, stdin);
     trimNewline(newSupplier.phone);
 
-    // Input Location / Town
     printf("Enter Town/Location: ");
     fgets(newSupplier.location, STRING_LEN, stdin);
     trimNewline(newSupplier.location);
 
-    // Save to array
     suppliers[*count] = newSupplier;
     (*count)++;
 
     printf("\n[Success] Supplier '%s' registered successfully!\n", newSupplier.name);
 }
-
-// 2. DISPLAY ALL SUPPLIERS
 void displaySuppliers(const Supplier suppliers[], int count) {
     if (count == 0) {
         printf("\nNo suppliers registered yet.\n");
@@ -151,7 +141,6 @@ void searchSupplier(const Supplier suppliers[], int count) {
     }
 }
 
-// 4. COMPARE / FILTER SUPPLIERS BY LOCATION
 void compareSuppliersByLocation(const Supplier suppliers[], int count) {
     if (count == 0) {
         printf("\nNo suppliers registered.\n");
@@ -181,7 +170,6 @@ void compareSuppliersByLocation(const Supplier suppliers[], int count) {
     }
 }
 
-// MODULE MENU
 void supplierMenu(Supplier suppliers[], int *count) {
     int choice;
     do {
@@ -195,10 +183,10 @@ void supplierMenu(Supplier suppliers[], int *count) {
 
         if (scanf("%d", &choice) != 1) {
             printf("Invalid input. Please enter a number.\n");
-            while (getchar() != '\n'); // Clear invalid input
+            while (getchar() != '\n'); 
             continue;
         }
-        while (getchar() != '\n'); // Clear newline
+        while (getchar() != '\n'); 
 
         switch (choice) {
             case 1: addSupplier(suppliers, count); break;
