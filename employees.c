@@ -1,158 +1,27 @@
 #include <stdio.h>
 #include <string.h>
+#include "employees.h"
 
-int main()
-{
-    int count = 0;
-    int choice;
-    int id;
-    int position;
-    int age[100];
-    int employeeID[100];
-    int searchEmployee(int id, int ids[], int size);
-    int addEmployee(int count);
-    
-    char employeeName[100][50];
-    char department[100][50];
-    char qualification[100][100];
-    char gender[100][20];
-    char phoneNumber[100][20];
-    
-    float workingHours[100];
-    float basicSalary[100];
-    float housingAllowance[100];
-    float transportAllowance[100];
-    float otherAllowance[100];
-    float grossSalary;
-    float calculateSalary(float basic, float housing, float transport, float other);
-    
-    void displayMenu();
-    void displayEmployees(int count);
-    void displayEmployee(int position);
-  
-    {
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
+// Employee arrays //
 
-        if (choice == 1)
-        {
-            count = addEmployee(count);
-        }
+int employeeID[100];
 
-        else if (choice == 2)
-        {
-            displayEmployees(count);
-        }
+char employeeName[100][50];
+char department[100][50];
+char qualification[100][100];
+char gender[100][20];
+char phoneNumber[100][20];
 
-        else if (choice == 3)
-        {
-            printf("\n========== SEARCH EMPLOYEE ==========\n");
+int age[100];
 
-            printf("Enter Employee ID: ");
-            scanf("%d", &id);
-
-            position = searchEmployee(id, employeeID, count);
-
-            if (position == -1)
-            {
-                printf("\nEmployee with ID %d was not found.\n", id);
-            }
-            else
-            {
-                printf("\nEmployee Found!\n");
-                displayEmployee(position);
-            }
-        }
-
-        else if (choice == 4)
-        {
-            printf("\n========== SALARY CALCULATION ==========\n");
-
-            printf("Enter Employee ID: ");
-            scanf("%d", &id);
-
-            position = searchEmployee(id, employeeID, count);
-
-            if (position == -1)
-            {
-                printf("\nEmployee with ID %d was not found.\n", id);
-            }
-            else
-            {
-                grossSalary = calculateSalary(
-                    basicSalary[position],
-                    housingAllowance[position],
-                    transportAllowance[position],
-                    otherAllowance[position]
-                );
-
-                printf("\n========== SALARY INFORMATION ==========\n");
-
-                printf("Employee ID: %d\n",
-                       employeeID[position]);
-
-                printf("Name: %s\n",
-                       employeeName[position]);
-
-                printf("Department: %s\n",
-                       department[position]);
-
-                printf("Gender: %s\n",
-                       gender[position]);
-
-                printf("Phone Number: %s\n",
-                       phoneNumber[position]);
-
-                printf("Basic Salary: N$ %.2f\n",
-                       basicSalary[position]);
-
-                printf("Housing Allowance: N$ %.2f\n",
-                       housingAllowance[position]);
-
-                printf("Transport Allowance: N$ %.2f\n",
-                       transportAllowance[position]);
-
-                printf("Other Allowance: N$ %.2f\n",
-                       otherAllowance[position]);
-
-                printf("Gross Salary: N$ %.2f\n",
-                       grossSalary);
-            }
-        }
-
-        else if (choice == 5)
-        {
-            printf("\nExiting Employee Management System...\n");
-        }
-
-        else
-        {
-            printf("\nInvalid choice. Please try again.\n");
-        }
-
-    } while (choice != 5);
-
-    return 0;
-}
+float workingHours[100];
+float basicSalary[100];
+float housingAllowance[100];
+float transportAllowance[100];
+float otherAllowance[100];
 
 
-// Display the menu //
-
-void displayMenu()
-{
-    printf("\n====================================\n");
-    printf("       EMPLOYEE MANAGEMENT SYSTEM\n");
-    printf("====================================\n");
-
-    printf("1. Add Employee\n");
-    printf("2. Display Employees\n");
-    printf("3. Search Employee\n");
-    printf("4. Calculate Salary\n");
-    printf("5. Exit\n");
-}
-
-
-// add an employee //
+// Add an employee //
 
 int addEmployee(int count)
 {
@@ -233,7 +102,7 @@ int addEmployee(int count)
     }
 
 
-    // basic salary //
+    // Basic Salary //
 
     printf("Enter Basic Salary: N$ ");
     scanf("%f", &basicSalary[count]);
@@ -247,7 +116,7 @@ int addEmployee(int count)
     }
 
 
-    // housing allowance //
+    // Housing Allowance //
 
     printf("Enter Housing Allowance: N$ ");
     scanf("%f", &housingAllowance[count]);
@@ -261,7 +130,7 @@ int addEmployee(int count)
     }
 
 
-    // transport allowance //
+    // Transport Allowance //
 
     printf("Enter Transport Allowance: N$ ");
     scanf("%f", &transportAllowance[count]);
@@ -295,7 +164,7 @@ int addEmployee(int count)
 }
 
 
-// display all employees //
+// Display all employees //
 
 void displayEmployees(int count)
 {
