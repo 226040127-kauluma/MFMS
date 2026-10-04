@@ -28,7 +28,7 @@ GitHub Username
 4
 [Rauna Shindumbu]
 [226098710]
-[@226098710]
+[@226098710-Shindumbu]
 
 5
 [Hillary Kavilla]
@@ -38,7 +38,7 @@ GitHub Username
 6
 [Josephine Teodol]
 [225944226]
-[@225044226]
+[@225044226-Teodol]
 
 7
 [Vannesa Tapalo]
