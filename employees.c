@@ -3,8 +3,34 @@
 
 int main()
 {
-    displayMenu();
-
+    int count = 0;
+    int choice;
+    int id;
+    int position;
+    int age[100];
+    int employeeID[100];
+    int searchEmployee(int id, int ids[], int size);
+    int addEmployee(int count);
+    
+    char employeeName[100][50];
+    char department[100][50];
+    char qualification[100][100];
+    char gender[100][20];
+    char phoneNumber[100][20];
+    
+    float workingHours[100];
+    float basicSalary[100];
+    float housingAllowance[100];
+    float transportAllowance[100];
+    float otherAllowance[100];
+    float grossSalary;
+    float calculateSalary(float basic, float housing, float transport, float other);
+    
+    void displayMenu();
+    void displayEmployees(int count);
+    void displayEmployee(int position);
+  
+    {
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
@@ -126,7 +152,7 @@ void displayMenu()
 }
 
 
-// Add an employee //
+// add an employee //
 
 int addEmployee(int count)
 {
@@ -207,7 +233,7 @@ int addEmployee(int count)
     }
 
 
-    // Basic Salary //
+    // basic salary //
 
     printf("Enter Basic Salary: N$ ");
     scanf("%f", &basicSalary[count]);
@@ -221,7 +247,7 @@ int addEmployee(int count)
     }
 
 
-    // Housing Allowance //
+    // housing allowance //
 
     printf("Enter Housing Allowance: N$ ");
     scanf("%f", &housingAllowance[count]);
@@ -235,7 +261,7 @@ int addEmployee(int count)
     }
 
 
-    // Transport Allowance //
+    // transport allowance //
 
     printf("Enter Transport Allowance: N$ ");
     scanf("%f", &transportAllowance[count]);
@@ -269,7 +295,7 @@ int addEmployee(int count)
 }
 
 
-// Display all employees //
+// display all employees //
 
 void displayEmployees(int count)
 {
