@@ -37,7 +37,7 @@ GitHub Username
 
 6
 [Josephine Teodol]
-[225944226]
+[225044226]
 [@225044226-Teodol]
 
 7
